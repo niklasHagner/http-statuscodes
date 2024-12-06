@@ -164,7 +164,7 @@
               <tr>
                 <td>501</td>
                 <td>Not Implemented</td>
-                <td>Request method isn't implemented. Yet.</td>
+                <td>Request method isn't implemented yet.</td>
               </tr>
               <tr>
                 <td>502</td>
@@ -175,7 +175,7 @@
               <tr>
                 <td>503</td>
                 <td>Service Unavailable</td>
-                <td>Server cannot handle the request. Usually because it is down or overloaded. Temporarily.</td>
+                <td>Server cannot handle the request. Usually because it is temporarily down or overloaded.</td>
               </tr>
               <tr>
                 <td>504</td>
@@ -439,12 +439,12 @@
                 <tr>
                   <td>301</td>
                   <td>Moved Permanently</td>
-                  <td>This and all future requests should be directed to the given URI.</td>
+                  <td>A redirect. Future requests should ideally be directed to the new URL.</td>
                 </tr>
                 <tr class="obsolete">
                   <td>302</td>
-                  <td>Found</td>
-                  <td>Obsolete code (Previously 302 meant "Moved temporarily") that has now been replaced by 303 or 307. Tells the client to browse to another URL. The resource was found, but at a different location. Future requests should still use the original URI.</td>
+                  <td>"Found" or "Moved temporarily"</td>
+                  <td>This status code still works but it is kinda obsolete since many browsers violated the standard. It's basically a redirect to another URL. Consider using 307 "Temporary Redirect" instead.</td>
                 </tr>
                 <tr>
                   <td>303</td>
@@ -476,10 +476,7 @@
                 <tr>
                   <td>307</td>
                   <td>Temporary Redirect</td>
-                  <td>The request should be repeated with another URI. However, unlike a 301, future requests should
-                    still use
-                    the
-                    original URI.</td>
+                  <td>A redirect to a new URL. In the future the client can keep requesting the old URL. But don't keep a 307 on your server for years, consider switching it to a 301 "Moved Permanently".</td>
                 </tr>
                 <tr>
                   <td>308</td>
